@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-appsyncgateway-dev-124254-authRole",
+      "UnauthRoleArn": "arn:aws:iam::896655362572:role/amplify-appsyncgateway-dev-124254-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::896655362572:role/amplify-appsyncgateway-dev-124254-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-appsyncgateway-dev-124254-deployment",
+      "UnauthRoleName": "amplify-appsyncgateway-dev-124254-unauthRole",
+      "StackName": "amplify-appsyncgateway-dev-124254",
+      "StackId": "arn:aws:cloudformation:us-east-1:896655362572:stack/amplify-appsyncgateway-dev-124254/95a00990-4d71-11ed-9845-0e4d92fad78f",
+      "AmplifyAppId": "d1d95aqj0pqr49"
+    },
+    "categories": {
+      "api": {
+        "appsyncgateway": {}
+      }
+    }
+  }
+}
