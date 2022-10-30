@@ -1,0 +1,15 @@
+## [Start] Create request. **
+#set( $headers = $utils.http.copyHeaders($ctx.request.headers) )
+$util.qr($headers.put("accept-encoding", "application/json"))
+$util.qr($headers.put("Content-Type", "application/json"))
+$util.qr($headers.put("Authorization", "$ctx.request.headers.Authorization"))
+{
+  "version": "2018-05-29",
+  "method": "GET",
+  "resourcePath": "/",
+  "params": {
+      "headers": $util.toJson($headers),
+      "query": $util.toJson($ctx.args.query)
+  }
+}
+## [End] Create request. **
