@@ -1,12 +1,17 @@
 ## [Start] Create request. **
 
+#if( !$context.request.headers.authorization ) 
+	$util.error("Fauna Authorization header is missing in the request")
+#end
+
 #set( $headers = {
-   "Authorization": "Bearer fnAE0GweZdACT1v6P3GDsgK_occhheCaes8Qs8rl",
+   "Authorization": $context.request.headers.authorization,
    "Content-Type": "application/json"
 })
 
 #set( $payload = "query ListUsers { listUsers { data" + "$ctx.info.selectionSetGraphQL" + " } }" )
 
+## $util.error($context.request.headers.authorization)
 
 $util.qr($headers.put("accept-encoding", "application/json"))
 {

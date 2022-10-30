@@ -9,7 +9,8 @@ type Query {
   listUsers: [User] @http(
     url: "https://graphql.fauna.com/graphql"
     headers: [
-      { key: "Authorization", value: "${FAUNA_SECRET}" }
+      { key: "Content-Type", value: "application/json" }
+      { key: "Authorization", value: "$ctx.request.headers.Authorization" }
     ]
   )
 }
