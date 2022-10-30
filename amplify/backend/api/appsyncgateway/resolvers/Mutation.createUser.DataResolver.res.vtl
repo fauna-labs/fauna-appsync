@@ -1,0 +1,13 @@
+## [Start] Process response. **
+#if( $ctx.result.statusCode == 200 || $ctx.result.statusCode == 201 )
+  #if( $ctx.result.headers.get("Content-Type").toLowerCase().contains("xml") )
+    $utils.xml.toJsonString($ctx.result.body)
+  #else
+    #set($body = $util.parseJson($ctx.result.body))
+    #set($result =  $util.toJson($body.data.createUser) )
+    $result
+  #end
+#else
+$util.qr($util.appendError($ctx.result.body, $ctx.result.statusCode))
+#end
+## [End] Process response. **

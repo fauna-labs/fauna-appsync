@@ -1,0 +1,39 @@
+## [Start] Create request. **
+## START: Manually checking that all non-null arguments are provided either in the query or the body **
+#if( (!$ctx.args.body.first_name && !$ctx.args.query.first_name) || (!$ctx.args.body.last_name && !$ctx.args.query.last_name) || (!$ctx.args.body.email && !$ctx.args.query.email) )
+$util.error("An argument you marked as Non-Null is not present in the query nor the body of your request."))
+#end
+## END: Manually checking that all non-null arguments are provided either in the query or the body **
+
+#if( !$context.request.headers.authorization ) 
+	$util.error("Fauna Authorization header is missing in the request")
+#end
+
+#set( $headers = {
+   "Authorization": $context.request.headers.authorization,
+   "Content-Type": "application/json"
+})
+
+
+#set( $payload = "mutation CreateUser ($userInput: UserInput!) { createUser(data: $userInput) " + "$ctx.info.selectionSetGraphQL" + " }" )
+
+$util.qr($headers.put("accept-encoding", "application/json"))
+{
+  "version": "2018-05-29",
+  "method": "POST",
+  "resourcePath": "/graphql",
+  "params": {
+      "headers": $util.toJson($headers),
+      "body": $util.toJson({
+      	"query": "$payload",
+        "variables": { "userInput": { 
+        	"first_name": $ctx.args.query.first_name, 
+            "last_name": $ctx.args.query.last_name, 
+            "email": $ctx.args.query.email, 
+            "avatar": $ctx.args.query.avatar 
+            } 
+        }       
+      })
+  }
+}
+## [End] Create request. **

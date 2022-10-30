@@ -14,3 +14,18 @@ type Query {
     ]
   )
 }
+
+type Mutation {
+  createUser(
+    first_name: String!
+    last_name: String!
+    email: String!
+    avatar: String
+  ): User @http(
+    url: "https://graphql.fauna.com/"
+    headers: [
+      { key: "Content-Type", value: "application/json" }
+      { key: "Authorization", value: "$ctx.request.headers.Authorization" }
+    ]
+  )
+}
