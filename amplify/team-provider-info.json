@@ -1,14 +1,14 @@
 {
-  "dev": {
+  "devshadid": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-appsyncgateway-dev-124254-authRole",
-      "UnauthRoleArn": "arn:aws:iam::896655362572:role/amplify-appsyncgateway-dev-124254-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::896655362572:role/amplify-appsyncgateway-dev-124254-authRole",
+      "AuthRoleName": "amplify-appsyncgateway-devshadid-172846-authRole",
+      "UnauthRoleArn": "arn:aws:iam::896655362572:role/amplify-appsyncgateway-devshadid-172846-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::896655362572:role/amplify-appsyncgateway-devshadid-172846-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-appsyncgateway-dev-124254-deployment",
-      "UnauthRoleName": "amplify-appsyncgateway-dev-124254-unauthRole",
-      "StackName": "amplify-appsyncgateway-dev-124254",
-      "StackId": "arn:aws:cloudformation:us-east-1:896655362572:stack/amplify-appsyncgateway-dev-124254/95a00990-4d71-11ed-9845-0e4d92fad78f",
+      "DeploymentBucketName": "amplify-appsyncgateway-devshadid-172846-deployment",
+      "UnauthRoleName": "amplify-appsyncgateway-devshadid-172846-unauthRole",
+      "StackName": "amplify-appsyncgateway-devshadid-172846",
+      "StackId": "arn:aws:cloudformation:us-east-1:896655362572:stack/amplify-appsyncgateway-devshadid-172846/aca964b0-57d0-11ed-a8f6-0a9e35c00e4d",
       "AmplifyAppId": "d1d95aqj0pqr49"
     },
     "categories": {

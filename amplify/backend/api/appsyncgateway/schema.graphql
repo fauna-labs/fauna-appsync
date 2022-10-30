@@ -1,35 +1,15 @@
 type User {
-  id: Int
-  email: String
-  first_name: String
-  last_name: String
+  first_name: String!
+  last_name: String!
+  email: String!
   avatar: String
 }
 
-type UserList {
-  data: [User]
-  page: Int
-  per_page: Int
-  total: Int
-  total_pages: Int
-}
-
-type UserOutput {
-  name: String
-  job: String
-  id: String
-  createdAt: String
-}
-
 type Query {
-  listUsers: UserList @http(method: GET, url: "https://reqres.in/api/users")
-  listProducts: String @http(method: POST, url: "https://graphql.fauna.com/graphql")
-}
-
-type Mutation {
-  createUser(name: String, job: String): UserOutput @http(method: POST, url: "https://reqres.in/api/users")
-}
-
-type Subscription {
-  onCreateUser: UserOutput @aws_subscribe(mutations: ["createUser"])
+  listUsers: [User] @http(
+    url: "https://graphql.fauna.com/graphql"
+    headers: [
+      { key: "Authorization", value: "${FAUNA_SECRET}" }
+    ]
+  )
 }

@@ -1,0 +1,23 @@
+## [Start] Create request. **
+
+#set( $headers = {
+   "Authorization": "Bearer fnAE0GweZdACT1v6P3GDsgK_occhheCaes8Qs8rl",
+   "Content-Type": "application/json"
+})
+
+#set( $payload = "query ListUsers { listUsers { data" + "$ctx.info.selectionSetGraphQL" + " } }" )
+
+
+$util.qr($headers.put("accept-encoding", "application/json"))
+{
+  "version": "2018-05-29",
+  "method": "POST",
+  "resourcePath": "/graphql",
+  "params": {
+      "headers": $util.toJson($headers),
+      "body": $util.toJson({
+      	"query": "$payload"
+      })
+  }
+}
+## [End] Create request. **
