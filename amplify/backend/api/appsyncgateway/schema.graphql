@@ -44,3 +44,8 @@ type Mutation {
     ]
   )
 }
+
+type Subscription {
+  onUserCreated: User @aws_subscribe(mutations: ["createUser"])
+  onUserUpdated(id: ID! email: String!): User @aws_subscribe(mutations: ["updateUser"])
+}
