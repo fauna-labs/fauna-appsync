@@ -19,3 +19,6 @@ You can interact with FaunaDB via GraphQL API, REST or Drivers (JS, Java, Go, Py
 - Clone the code and run `amplify configure` to setup you project.
 - Make sure you have all the custom VTL resolvers in `amplify/backend/api/appsyncgateway/resolvers` directory.
 - Run `amplify push` to create a new stack.
+
+### TODO:
+Currently working on a script that will autogenerate the VTL resolvers from GraphQL schema. 
